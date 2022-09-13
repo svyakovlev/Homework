@@ -19,7 +19,7 @@ public class Service {
         if (number1 == null || number2 == null) {
             return "Ошибка: нужно ввести оба числа";
         } else {
-            Double min = number1 + number2;
+            Double min = number1 - number2;
             return number1 + " - " + number2 + " = " + min;
         }
     }
@@ -37,7 +37,8 @@ public class Service {
         if (number1 == null || number2 == null) {
             return "Ошибка: нужно ввести оба числа";
         } else if (number2 == 0) {
-            return "Делить на ноль нельзя";
+            throw new IllegalArgumentException("Делить на ноль нельзя");
+//            return "Делить на ноль нельзя";
         } else {
             Double div = number1 / number2;
             return number1 + " / " + number2 + " = " + div;
